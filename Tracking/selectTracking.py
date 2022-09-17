@@ -6,6 +6,7 @@ frame_count = 0
 
 color = (0, 0, 255)
 
+#legacy로 들어갔음 
 trackers = cv2.legacy.MultiTracker()
 
 cap = cv2.VideoCapture(file_name)
@@ -29,7 +30,7 @@ while True:
     cv2.rectangle(frameNew , (startX,startY) , (endX , endY) , color , 3)
 
     if frameNew is None:
-        print('### No more frame ###')
+        print('끝끝끝끝끝끝끝끝끝끝')
         break
 
     start_time = time.time()
@@ -55,17 +56,13 @@ while True:
         box = cv2.selectROI("Frame", frameNew, fromCenter=False,
                             showCrosshair=True)  # 십자모양
 
+        #legacy 쪽으로 들어감 
         tracker = cv2.legacy.TrackerCSRT_create()
         # tracker = cv2.legacy.TrackerKCF_create()
-
         # tracker = cv2.legacy.TrackerBoosting_create()
-        # mil
         # tracker = cv2.legacy.TrackerMIL_create()
-        # tld
         # tracker = cv2.legacy.TrackerTLD_create()
-        # medianflow
         # tracker = cv2.TrackerMedianFlow_create()
-        # mosse
         # tracker = cv2.TrackerMOSSE_create()
         trackers.add(tracker, frameNew, box)
 

@@ -4,19 +4,14 @@ import time
 file_name = './faceOnlyTracking.py/../ai_cv/video/face_01.mp4'
 frame_count = 0
 
-# tracker = cv2.TrackerCSRT_create()
-# kcf
+# tracker = cv2.legacy.TrackerCSRT_create()
 tracker = cv2.legacy.TrackerKCF_create()
 # boosting
-# tracker = cv2.TrackerBoosting_create()
-# mil
-# tracker = cv2.TrackerMIL_create()
-# tld
-# tracker = cv2.TrackerTLD_create()
-# medianflow
-# tracker = cv2.TrackerMedianFlow_create()
-# mosse
-# tracker = cv2.TrackerMOSSE_create()
+# tracker = cv2.legacy.TrackerBoosting_create()
+# tracker = cv2.legacy.TrackerMIL_create()
+# tracker = cv2.legacy.TrackerTLD_create()
+# tracker = cv2.legacy.TrackerMedianFlow_create()
+# tracker = cv2.legacy.TrackerMOSSE_create()
 
 
 face_cascade_name = './faceOnlyTracking.py/../ai_cv/haarcascades/haarcascade_frontalface_alt.xml'
